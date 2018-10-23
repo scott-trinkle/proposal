@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage{preamble}
+
+\begin{document}
+\section*{Specific Aims}
+Diffusion MRI (dMRI) is a powerful, non-invasive tool for characterizing
+neurological tissue microstructure on a macroscopic scale, and is widely used in
+both research and clinical settings. New methods of reconstructing orientation
+distribution functions (ODFs) from dMRI data are rapidly being developed, each
+allowing for the identification of distinct axon fiber populations within each
+voxel. The 3D orientations of these fiber populations are passed into
+tractography algorithms, which are used in connectomics research to estimate the
+paths of individual nerve tracts throughout the brain.
+
+Efforts to validate both ODF reconstruction methods and tractography results
+have typically relied on serial optical histology. For ODF validation, a
+computer vision technique called ``structure tensor analysis'' uses image
+intensity gradients to estimate voxel-wise fiber orientations in the
+high-resolution histology data. These orientation estimates are then binned
+across regions of interest the size of a dMRI voxel in order to form
+ground-truth ODFs, which are then compared to ODFs from the same regions in dMRI
+data.  Tractography validation is generally performed using neural tracers
+injected into a small number of seed sites before the sample is
+sacrificed. Voxel-wise comparisons between dMRI tractography results and the
+ground truth tracts identified from these tracers are then used to evaluate the
+performance of various tractography algorithms.
+
+Both of these validation efforts rely on the labor-intensive process of
+physically sectioning, staining, and optically scanning hundreds of slices of
+the tissue of interest. The slices are necessarily at least 10-20 times thicker
+than the achievable in-plane resolution (\url{~}5000 nm vs. 250 nm), yielding
+non-isotropic volumetric reconstructions; distortions introduced by sectioning
+further limit the ability to align the slices and extract faithful information
+on the 3D orientation of fiber populations.
+
+In recent years, synchrotron micro computed tomography (microCT) has emerged as
+an alternative to serial optical histology for use as a dMRI validation dataset, allowing
+for isotropic, 3D imaging of whole mouse brain specimens at sub-micron
+resolution. We propose to develop and optimize a pipeline to use microCT data to validate
+and characterize dMRI ODF reconstruction and tractography algorithms. The
+results of this work will address limitations of previous histology-based
+studies, while generating a publicly available whole-brain tractography atlas
+through a combination of white matter image segmentation and ``ground-truth''
+tractograms generated from microCT ODFs. The specific aims are:
+
+\noindent\textbf{Aim 1: Optimize microCT data acquisition to maximize axon fiber bundle contrast.}
+Specimens are stained with uranyl acetate, osmium tetroxide and lead citrate
+prior to microCT imaging. The concentrations and staining protocol for these
+agents will be optimized along with the synchrotron beam energy to maximize the
+contrast of axon fiber bundles in the microCT data. Additionally, we will
+install and characterize a new detector system with a higher resolution and
+wider field of view to simplify and improve the microCT image reconstruction,
+which currently relies on a mosaic data-stitching method to image whole mouse
+brains.
+
+\noindent\textbf{Aim 2: Evaluate dMRI reconstruction methods using ground-truth
+  microCT ODFs.}
+We will compute ground-truth ODFs from the microCT data across a whole mouse
+brain using structure tensor analysis. The ODFs will be compared to dMRI ODFs
+calculated on the same specimen using a variety of reconstruction methods,
+generating algorithm-specific 3D spatial maps of dMRI accuracy. We will
+investigate patterns in the morphological features of failure regions in
+an effort to better understand modeling errors in the dMRI reconstruction
+methods. 
+
+\noindent\textbf{Aim 3: Generate a ground-truth tractography atlas from microCT
+  ODFs and segmented axon fiber bundles.} We will generate a 3D tractography atlas
+by running dMRI tractography algorithms on the ground-truth ODFs from
+microCT. This will yield the ``best-performance'' results of various algorithms;
+having mitigated the effects of inaccurate dMRI ODFs, this approach will allow
+us to understand the inherent limitations in estimating tracts from ODF data.
+Tractogram results will also be validated against segmented axon fiber bundles
+from the microCT intensity data for algorithm-specific characterization.
+
+Upon completion, this project will generate a comprehensive validation map for
+both dMRI reconstruction methods and tractography, exploiting the advantages of
+a novel dataset uniquely tailored to this purpose. The ground-truth tractography
+atlas will be made publically available as an unprecedentedly comprehensive tool
+for studies into the future role of dMRI in connectomics research.
+\end{document}

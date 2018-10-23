@@ -1,0 +1,34 @@
+\usetheme{simple}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{outlines}
+\usepackage{media9}
+\usepackage{bm}
+\usepackage{upgreek}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[style=phys, sorting=none, maxbibnames=4, minbibnames=2]{biblatex}
+\renewcommand*{\bibfont}{\scriptsize}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+% Puts a \note{} at the beginning of each frame
+% So that notes file has same slides as main
+\makeatletter
+\def\beamer@framenotesbegin{
+  \gdef\beamer@noteitems{}
+  \gdef\beamer@notes{{}}
+}
+\makeatother
+
+\definecolor{uclightgray}{cmyk}{0, 0, 0.05, 0.2}
+
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
+\newcommand{\um}{$\upmu$m}
+\newcommand{\uct}{$\upmu$CT }
+\newcommand{\bolduct}{$\bm{\upmu}$CT }

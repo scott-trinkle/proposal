@@ -1,0 +1,54 @@
+\ProvidesPackage{preamble}
+
+% Style
+\usepackage[american]{babel}
+\usepackage[
+top    = 1.87cm,
+bottom = 1.87cm,
+left   = 1.27cm,
+right  = 1.27cm]{geometry}
+
+\renewcommand{\rmdefault}{phv} % Arial font
+\renewcommand{\sfdefault}{phv} % Arial font
+
+\usepackage{titlesec}
+\titlespacing*\section{0pt}{-0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing*\subsection{0pt}{-0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing*\subsubsection{0pt}{-0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\setlength{\belowcaptionskip}{-15pt}
+\setlength{\parindent}{.5cm}
+\setlength{\parskip}{0.5ex}
+\hyphenpenalty=0
+
+\usepackage{outlines}
+
+% Color
+\usepackage{xcolor}
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+% Bibliography
+\usepackage[backend=biber, maxbibnames=100, style=ieee]{biblatex}
+\addbibresource{specific_aims.bib}
+
+% For graduation timeline figure
+\usepackage{pgfgantt}
+
+% Math
+\usepackage{amsmath,amssymb}
+
+% Figures and tables
+\usepackage[font={small}]{caption}
+\usepackage{float}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{}
+\rhead{Scott Trinkle}
+\cfoot{}
+\rfoot{\thepage}
